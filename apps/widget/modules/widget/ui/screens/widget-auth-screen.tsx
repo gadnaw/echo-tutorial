@@ -1,10 +1,13 @@
+"use client";
+
 import z from "zod";
+import { useAtomValue, useSetAtom } from "jotai";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useMutation } from "convex/react";
 import { api } from "@workspace/backend/_generated/api";
-
+import { Doc } from "@workspace/backend/_generated/dataModel";
 import {
   Form,
   FormControl,
@@ -14,17 +17,24 @@ import {
 } from "@workspace/ui/components/form";
 import { Input } from "@workspace/ui/components/input";
 import { Button } from "@workspace/ui/components/button";
+
 import { WidgetHeader } from "@/modules/widget/ui/components/widget-header";
-import { Doc } from "@workspace/backend/_generated/dataModel";
+import {
+  contactSessionIdAtomFamily,
+  organizationIdAtom,
+} from "@/modules/widget/atoms/widget-atoms";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
 });
 
-const organizationId = "123";
-
 export const WidgetAuthScreen = () => {
+  const organizationId = useAtomValue(organizationIdAtom);
+  const setContactSessionId = useSetAtom(
+    contactSessionIdAtomFamily(organizationId || "")
+  );
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -60,7 +70,7 @@ export const WidgetAuthScreen = () => {
       organizationId,
       metadata,
     });
-    console.log("🚀 ~ onSubmit ~ contactSessionId:", contactSessionId);
+    setContactSessionId(contactSessionId);
   };
 
   return (
