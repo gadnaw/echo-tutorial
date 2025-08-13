@@ -83,7 +83,7 @@ importers:
     dependencies:
       '@convex-dev/agent':
         specifier: ^0.1.17
-        version: 0.1.17(ai@5.0.11(zod@3.25.76))(convex-helpers@0.1.102(@standard-schema/spec@1.0.0)(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76))(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        version: 0.1.17(ai@4.3.19(react@19.1.1)(zod@3.25.76))(convex-helpers@0.1.102(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76))(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)
       '@hookform/resolvers':
         specifier: ^5.2.0
         version: 5.2.1(react-hook-form@7.62.0(react@19.1.1))
@@ -148,18 +148,18 @@ importers:
 
   packages/backend:
     dependencies:
-      '@ai-sdk/google':
-        specifier: ^2.0.5
-        version: 2.0.5(zod@3.25.76)
+      '@ai-sdk/openai':
+        specifier: ^1.3.24
+        version: 1.3.24(zod@3.25.76)
       '@clerk/backend':
         specifier: ^2.7.0
         version: 2.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@convex-dev/agent':
-        specifier: 0.5.0-alpha.1
-        version: 0.5.0-alpha.1(ai@5.0.11(zod@3.25.76))(convex-helpers@0.1.102(@standard-schema/spec@1.0.0)(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76))(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        specifier: ^0.1.17
+        version: 0.1.17(ai@4.3.19(react@19.1.1)(zod@3.25.76))(convex-helpers@0.1.102(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76))(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)
       ai:
-        specifier: ^5.0.11
-        version: 5.0.11(zod@3.25.76)
+        specifier: ^4.3.19
+        version: 4.3.19(react@19.1.1)(zod@3.25.76)
       convex:
         specifier: ^1.25.4
         version: 1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
@@ -410,27 +410,37 @@ importers:
 
 packages:
 
-  '@ai-sdk/gateway@1.0.5':
-    resolution: {integrity: sha512-GOhxiHm2nfuS618Ia13AWxEIhCsj5+tFaw6sjSO7pvMZT03QgFAJyX4xBYj+3i3mfIvw+yJOvyhVu1fI+pAHQA==}
+  '@ai-sdk/openai@1.3.24':
+    resolution: {integrity: sha512-GYXnGJTHRTZc4gJMSmFRgEQudjqd4PUN0ZjQhPwOAYH1yOAvQoG/Ikqs+HyISRbLPCrhbZnPKCNHuRU4OfpW0Q==}
     engines: {node: '>=18'}
     peerDependencies:
-      zod: ^3.25.76 || ^4
+      zod: ^3.0.0
 
-  '@ai-sdk/google@2.0.5':
-    resolution: {integrity: sha512-jZjfD5MwVbujFxy4RJFIysNHRpfOomFFlq1rMDFSHwSdDkT1r3SQN0ORDu5RR750lss6W2PiujbH6cum/o/y3w==}
+  '@ai-sdk/provider-utils@2.2.8':
+    resolution: {integrity: sha512-fqhG+4sCVv8x7nFzYnFo19ryhAa3w096Kmc3hWxMQfW/TubPOmt3A6tYZhl4mUfQWWQMsuSkLrtjlWuXBVSGQA==}
     engines: {node: '>=18'}
     peerDependencies:
-      zod: ^3.25.76 || ^4
+      zod: ^3.23.8
 
-  '@ai-sdk/provider-utils@3.0.2':
-    resolution: {integrity: sha512-0a5a6VafkV6+0irdpqnub8WE6qzG2VMsDBpXb9NQIz8c4TG8fI+GSTFIL9sqrLEwXrHdiRj7fwJsrir4jClL0w==}
+  '@ai-sdk/provider@1.1.3':
+    resolution: {integrity: sha512-qZMxYJ0qqX/RfnuIaab+zp8UAeJn/ygXXAffR5I4N0n1IrvA6qBsjc8hXLmBiMV2zoXlifkacF7sEFnYnjBcqg==}
+    engines: {node: '>=18'}
+
+  '@ai-sdk/react@1.2.12':
+    resolution: {integrity: sha512-jK1IZZ22evPZoQW3vlkZ7wvjYGYF+tRBKXtrcolduIkQ/m/sOAVcVeVDUDvh1T91xCnWCdUGCPZg2avZ90mv3g==}
     engines: {node: '>=18'}
     peerDependencies:
-      zod: ^3.25.76 || ^4
+      react: ^18 || ^19 || ^19.0.0-rc
+      zod: ^3.23.8
+    peerDependenciesMeta:
+      zod:
+        optional: true
 
-  '@ai-sdk/provider@2.0.0':
-    resolution: {integrity: sha512-6o7Y2SeO9vFKB8lArHXehNuusnpddKPk7xqL7T2/b+OvXMRIXUO1rR4wcv1hAFUAT9avGZshty3Wlua/XA7TvA==}
+  '@ai-sdk/ui-utils@1.2.11':
+    resolution: {integrity: sha512-3zcwCc8ezzFlwp3ZD15wAPjf2Au4s3vAbKsXQVyhxODHcmu0iyPO2Eua6D/vicq/AUm/BAo60r97O6HU+EI0+w==}
     engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.23.8
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -554,17 +564,6 @@ packages:
     resolution: {integrity: sha512-/JxIGwcYC0Pnqk2iNh/HE85mSmqk0O5/EUns76AI7FFyBu6zXb9tk/Wz7vsKyG5sI36jrQSQYLlUf+wbksbpgw==}
     peerDependencies:
       ai: ^4.3.16
-      convex: ^1.23.0
-      convex-helpers: ^0.1.100
-      react: ^18.3.1 || ^19.0.0
-    peerDependenciesMeta:
-      react:
-        optional: true
-
-  '@convex-dev/agent@0.5.0-alpha.1':
-    resolution: {integrity: sha512-P1sCcpbfBJ76f1DMTG9sWIVFpWq//lyNVpJ1Ft8z0JhU8NR373CnZjQxwT3aAvZh8MzHGUpAbWTHCWatar943w==}
-    peerDependencies:
-      ai: ^5.0.0
       convex: ^1.23.0
       convex-helpers: ^0.1.100
       react: ^18.3.1 || ^19.0.0
@@ -2272,6 +2271,9 @@ packages:
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
+  '@types/diff-match-patch@1.0.36':
+    resolution: {integrity: sha512-xFdR6tkm0MWvBfO8xXCSsinYxHcqkQUlcHeSpMC2ukzOb6lwQAfDmW+Qt0AvlGd8HpsS28qKsB+oPeJn9I39jg==}
+
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
 
@@ -2498,11 +2500,15 @@ packages:
     resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==}
     engines: {node: '>=8'}
 
-  ai@5.0.11:
-    resolution: {integrity: sha512-PtiQAnhlWuN3Y2z9PifM/9XIQ0HIoHjZqEu7zHffyGEXiqHLtrJpt4IiGVzUTAKxXM5JCtO9sD/hwGXDp7ZYsw==}
+  ai@4.3.19:
+    resolution: {integrity: sha512-dIE2bfNpqHN3r6IINp9znguYdhIOheKW2LDigAMrgt/upT3B8eBGPSCblENvaZGoq+hxaN9fSMzjWpbqloP+7Q==}
     engines: {node: '>=18'}
     peerDependencies:
-      zod: ^3.25.76 || ^4
+      react: ^18 || ^19 || ^19.0.0-rc
+      zod: ^3.23.8
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
@@ -2677,6 +2683,10 @@ packages:
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
+
+  chalk@5.5.0:
+    resolution: {integrity: sha512-1tm8DTaJhPBG3bIkVeZt1iZM9GfSX2lzOeDVZH9R9ffRHpmHvxZ/QhgQH/aDTkswQVt+YHdXAdS/In/30OjCbg==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   change-case@3.1.0:
     resolution: {integrity: sha512-2AZp7uJZbYEzRPsFoa+ijKdvp9zsrnnt6+yFokfwEpeJm0xuJDVoxiRCAaTzyJND8GJkofo2IcKWaUZ/OECVzw==}
@@ -2967,6 +2977,9 @@ packages:
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
+
+  diff-match-patch@1.0.5:
+    resolution: {integrity: sha512-IayShXAgj/QMXgB0IWmKx+rOPuGMhqm5w6jvFxmVenXKIzRqTAAsbBPT3kWQeGANj3jGgvcvv4yK6SxqYmikgw==}
 
   diff@4.0.2:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
@@ -3733,6 +3746,11 @@ packages:
   json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
+    hasBin: true
+
+  jsondiffpatch@0.6.0:
+    resolution: {integrity: sha512-3QItJOXp2AP1uv7waBkao5nCvhEv+QmJAd38Ybq7wNI74Q+BBmnLn4EDKz6yI9xGAIQoUF87qHt+kc1IVxB4zQ==}
+    engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
   jsonfile@6.2.0:
@@ -4573,6 +4591,9 @@ packages:
     resolution: {integrity: sha512-Gn/JaSk/Mt9gYubxTtSn/QCV4em9mpAPiR1rqy/Ocu19u/G9J5WWdNoUT4SiV6mFC3y6cxyFcFwdzPM3FgxGAQ==}
     engines: {node: '>= 10.13.0'}
 
+  secure-json-parse@2.7.0:
+    resolution: {integrity: sha512-6aU+Rwsezw7VR8/nyvKTx8QpWH9FrcYiXXlqC4z5d5XQBDRqtbfsRjnwGyqbi3gddNtWHuEk9OANUotL26qKUw==}
+
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
@@ -4786,6 +4807,11 @@ packages:
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+  swr@2.3.6:
+    resolution: {integrity: sha512-wfHRmHWk/isGNMwlLGlZX5Gzz/uTgo0o2IRuTMcf4CPuPFJZlq0rDaKUx+ozB5nBOReNV1kiOyzMfj+MBMikLw==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   tailwind-merge@3.3.1:
     resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
@@ -4820,6 +4846,10 @@ packages:
     resolution: {integrity: sha512-+6erLbBm0+LROX2sPXlUYx/ux5PyE9K/a92Wrt6oA+WDAoFTdpHE5tCYCI5PNzq2y8df4rA+QgHLJuR4jNymsg==}
     engines: {node: '>=10'}
     hasBin: true
+
+  throttleit@2.1.0:
+    resolution: {integrity: sha512-nt6AMGKW1p/70DF/hGBdJB57B8Tspmbp5gfJ8ilhLnt7kkr2ye7hzD6NVG8GGErk2HWF34igrL2CXmNIkzKqKw==}
+    engines: {node: '>=18'}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -5172,29 +5202,39 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/gateway@1.0.5(zod@3.25.76)':
+  '@ai-sdk/openai@1.3.24(zod@3.25.76)':
     dependencies:
-      '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.2(zod@3.25.76)
+      '@ai-sdk/provider': 1.1.3
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.76)
       zod: 3.25.76
 
-  '@ai-sdk/google@2.0.5(zod@3.25.76)':
+  '@ai-sdk/provider-utils@2.2.8(zod@3.25.76)':
     dependencies:
-      '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.2(zod@3.25.76)
+      '@ai-sdk/provider': 1.1.3
+      nanoid: 3.3.11
+      secure-json-parse: 2.7.0
       zod: 3.25.76
 
-  '@ai-sdk/provider-utils@3.0.2(zod@3.25.76)':
-    dependencies:
-      '@ai-sdk/provider': 2.0.0
-      '@standard-schema/spec': 1.0.0
-      eventsource-parser: 3.0.3
-      zod: 3.25.76
-      zod-to-json-schema: 3.24.6(zod@3.25.76)
-
-  '@ai-sdk/provider@2.0.0':
+  '@ai-sdk/provider@1.1.3':
     dependencies:
       json-schema: 0.4.0
+
+  '@ai-sdk/react@1.2.12(react@19.1.1)(zod@3.25.76)':
+    dependencies:
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.76)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.76)
+      react: 19.1.1
+      swr: 2.3.6(react@19.1.1)
+      throttleit: 2.1.0
+    optionalDependencies:
+      zod: 3.25.76
+
+  '@ai-sdk/ui-utils@1.2.11(zod@3.25.76)':
+    dependencies:
+      '@ai-sdk/provider': 1.1.3
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.76)
+      zod: 3.25.76
+      zod-to-json-schema: 3.24.6(zod@3.25.76)
 
   '@alloc/quick-lru@5.2.0': {}
 
@@ -5356,19 +5396,11 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@convex-dev/agent@0.1.17(ai@5.0.11(zod@3.25.76))(convex-helpers@0.1.102(@standard-schema/spec@1.0.0)(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76))(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)':
+  '@convex-dev/agent@0.1.17(ai@4.3.19(react@19.1.1)(zod@3.25.76))(convex-helpers@0.1.102(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76))(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)':
     dependencies:
-      ai: 5.0.11(zod@3.25.76)
+      ai: 4.3.19(react@19.1.1)(zod@3.25.76)
       convex: 1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
-      convex-helpers: 0.1.102(@standard-schema/spec@1.0.0)(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76)
-    optionalDependencies:
-      react: 19.1.1
-
-  '@convex-dev/agent@0.5.0-alpha.1(ai@5.0.11(zod@3.25.76))(convex-helpers@0.1.102(@standard-schema/spec@1.0.0)(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76))(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)':
-    dependencies:
-      ai: 5.0.11(zod@3.25.76)
-      convex: 1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
-      convex-helpers: 0.1.102(@standard-schema/spec@1.0.0)(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76)
+      convex-helpers: 0.1.102(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76)
     optionalDependencies:
       react: 19.1.1
 
@@ -7086,6 +7118,8 @@ snapshots:
     dependencies:
       '@types/ms': 2.1.0
 
+  '@types/diff-match-patch@1.0.36': {}
+
   '@types/eslint-scope@3.7.7':
     dependencies:
       '@types/eslint': 9.6.1
@@ -7381,13 +7415,17 @@ snapshots:
       clean-stack: 2.2.0
       indent-string: 4.0.0
 
-  ai@5.0.11(zod@3.25.76):
+  ai@4.3.19(react@19.1.1)(zod@3.25.76):
     dependencies:
-      '@ai-sdk/gateway': 1.0.5(zod@3.25.76)
-      '@ai-sdk/provider': 2.0.0
-      '@ai-sdk/provider-utils': 3.0.2(zod@3.25.76)
+      '@ai-sdk/provider': 1.1.3
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.76)
+      '@ai-sdk/react': 1.2.12(react@19.1.1)(zod@3.25.76)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.76)
       '@opentelemetry/api': 1.9.0
+      jsondiffpatch: 0.6.0
       zod: 3.25.76
+    optionalDependencies:
+      react: 19.1.1
 
   ajv-formats@2.1.1(ajv@8.17.1):
     optionalDependencies:
@@ -7597,6 +7635,8 @@ snapshots:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
 
+  chalk@5.5.0: {}
+
   change-case@3.1.0:
     dependencies:
       camel-case: 3.0.0
@@ -7721,11 +7761,10 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  convex-helpers@0.1.102(@standard-schema/spec@1.0.0)(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76):
+  convex-helpers@0.1.102(convex@1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1))(react@19.1.1)(typescript@5.9.2)(zod@3.25.76):
     dependencies:
       convex: 1.25.4(@clerk/clerk-react@5.41.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
     optionalDependencies:
-      '@standard-schema/spec': 1.0.0
       react: 19.1.1
       typescript: 5.9.2
       zod: 3.25.76
@@ -7871,6 +7910,8 @@ snapshots:
   devlop@1.1.0:
     dependencies:
       dequal: 2.0.3
+
+  diff-match-patch@1.0.5: {}
 
   diff@4.0.2: {}
 
@@ -8787,6 +8828,12 @@ snapshots:
   json-stable-stringify-without-jsonify@1.0.1: {}
 
   json5@2.2.3: {}
+
+  jsondiffpatch@0.6.0:
+    dependencies:
+      '@types/diff-match-patch': 1.0.36
+      chalk: 5.5.0
+      diff-match-patch: 1.0.5
 
   jsonfile@6.2.0:
     dependencies:
@@ -9916,6 +9963,8 @@ snapshots:
       ajv-formats: 2.1.1(ajv@8.17.1)
       ajv-keywords: 5.1.0(ajv@8.17.1)
 
+  secure-json-parse@2.7.0: {}
+
   semver@6.3.1: {}
 
   semver@7.6.2: {}
@@ -10190,6 +10239,12 @@ snapshots:
       react: 19.1.1
       use-sync-external-store: 1.5.0(react@19.1.1)
 
+  swr@2.3.6(react@19.1.1):
+    dependencies:
+      dequal: 2.0.3
+      react: 19.1.1
+      use-sync-external-store: 1.5.0(react@19.1.1)
+
   tailwind-merge@3.3.1: {}
 
   tailwindcss@4.1.11: {}
@@ -10220,6 +10275,8 @@ snapshots:
       acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
+
+  throttleit@2.1.0: {}
 
   through@2.3.8: {}
 

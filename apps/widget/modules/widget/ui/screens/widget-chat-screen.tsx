@@ -152,7 +152,7 @@ export const WidgetChatScreen = () => {
                 }}
                 placeholder={
                   conversation?.status === "resolved"
-                    ? "This conversation has been resolver."
+                    ? "This conversation has been resolved."
                     : "Type your message..."
                 }
                 value={field.value}
