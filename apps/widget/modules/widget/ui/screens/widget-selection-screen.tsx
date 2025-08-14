@@ -16,6 +16,7 @@ import {
   screenAtom,
 } from "@/modules/widget/atoms/widget-atoms";
 import { WidgetHeader } from "@/modules/widget/ui/components/widget-header";
+import { WidgetFooter } from "@/modules/widget/ui/components/widget-footer";
 
 export const WidgetSelectionScreen = () => {
   const setScreen = useSetAtom(screenAtom);
@@ -82,6 +83,7 @@ export const WidgetSelectionScreen = () => {
           <ChevronRightIcon />
         </Button>
       </div>
+      <WidgetFooter />
     </>
   );
 };
